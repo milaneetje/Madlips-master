@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">MadLips</string>
+    <string name="word">word</string>
+    <string name="Title">TextView</string>
+    <string name="Banner">banner</string>
+    <string name="Get_Started">Get Started!</string>
+    <string name="title_activity_1">Activity1</string>
+    <!--
+    This string is used for square devices and overridden by hello_world in
+    values-round/strings.xml for round devices.
+    -->
+    <string name="hello_world">Hello Square World!</string>
+    <string name="Word1">TextView</string>
+    <string name="enter">Enter</string>
+    <string name="WordOne">Name</string>
+    <string name="story1">Story1</string>
+    <string name="Story2">Button</string>
+    <string name="Story3">Button</string>
+    <string name="Story4">Button</string>
+    <string name="story5">Story5</string>
+    <string name="story4">Story4</string>
+    <string name="story3">Story3</string>
+    <string name="story2">story2</string>
+    <string name="Story1">story1</string>
+    <string name="input">Name</string>
+    <string name="Enter">Button</string>
+</resources>
