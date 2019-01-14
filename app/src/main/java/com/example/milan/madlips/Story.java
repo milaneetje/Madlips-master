@@ -79,7 +79,8 @@ public class Story implements Serializable {
     }
 
     /** returns true if all placeholders have been filled in */
-    public boolean isFilledIn() {
+    public boolean isFilledIn()
+    {
         return filledIn >= placeholders.size();
     }
 

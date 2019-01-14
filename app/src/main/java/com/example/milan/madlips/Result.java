@@ -15,7 +15,7 @@ public class Result extends AppCompatActivity {
         Intent intent = getIntent();
         String received = intent.getStringExtra("ourtext");
 
-        TextView textView = findViewById(R.id.textView2);
+        TextView textView = findViewById(R.id.textView);
         textView.setText(received);
     }
 }

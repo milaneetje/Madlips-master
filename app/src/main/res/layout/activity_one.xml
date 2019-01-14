@@ -18,12 +18,14 @@
         android:id="@+id/button9"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/Enter"
-        tools:text="Enter"
-        android:onClick="ActivityWord" />
+        android:onClick="ActivityWord"
+        android:text="Enter"
+        tools:text="Enter" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/Count"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:text="TextView" />
+
 </LinearLayout>

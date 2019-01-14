@@ -10,6 +10,8 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Random;
@@ -19,7 +21,9 @@ public class ActivityOne extends AppCompatActivity {
     private EditText hint;
     public int randomstory = -1;
     Random rand = new Random();
-    private TextView PHname;
+    public int placeHolderCount;        // amount of placeholders in a story
+    public int placeHolderCountRemain;  // amount of placeholders left
+    public String placeHolderCountText; // String with the amount of placeholder and the number of remaining ones
 
     String[] stories = {"madlib0_simple.txt", "madlib1_tarzan.txt", "madlib2_university.txt",
             "madlib3_clothes.txt", "madlib4_dance.txt"};
@@ -53,21 +57,15 @@ public class ActivityOne extends AppCompatActivity {
         if (randomstory == -1) {
             randomstory = rand.nextInt(4);
             Log.d("Chosen story index", Integer.toString(randomstory));
-            }
+        }
 
         if (story == null) {
             AssetManager assetInputStream = getAssets();
 
-
             try {
-
                 InputStream loadfile = null;
                 loadfile = assetInputStream.open(stories[randomstory]);
-                if (loadfile != null) {
-                    Log.d("test", "yes");
-                }
                 story = new Story(loadfile);
-
             } catch (IOException e) {
                 Log.d("Something went wrong", "story catch");
                 e.printStackTrace();
@@ -75,6 +73,15 @@ public class ActivityOne extends AppCompatActivity {
 
         }
         hint = findViewById(R.id.input);
+
+        placeHolderCount = story.getPlaceholderCount();
+        placeHolderCountRemain = story.getPlaceholderRemainingCount();
+
+        placeHolderCountText = (Integer.toString(placeHolderCountRemain) + "/" + Integer.toString(placeHolderCount));
+
+        TextView amountPlaceHolder = (TextView)findViewById(R.id.Count);
+        amountPlaceHolder.setText(placeHolderCountText);
+
         hint.setHint(story.getNextPlaceholder());
     }
 
@@ -82,6 +89,15 @@ public class ActivityOne extends AppCompatActivity {
         EditText word = findViewById(R.id.input);
         story.fillInPlaceholder(word.getText().toString());
         hint.setHint(story.getNextPlaceholder());
+
+        placeHolderCountRemain = story.getPlaceholderRemainingCount();
+
+        placeHolderCountText = (Integer.toString(placeHolderCountRemain) + "/" + Integer.toString(placeHolderCount));
+
+        TextView amountPlaceHolder = (TextView)findViewById(R.id.Count);
+        amountPlaceHolder.setText(placeHolderCountText);
+        System.out.println(placeHolderCountText);
+
         word.setText("");
         if (story.isFilledIn()) {
             Intent intent = new Intent(this, Result.class);
