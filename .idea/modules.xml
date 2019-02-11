@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/MadLips.iml" filepath="$PROJECT_DIR$/MadLips.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Madlips-master.iml" filepath="$PROJECT_DIR$/Madlips-master.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
